@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Using Link for navigation
 import { SignIn } from "@clerk/clerk-react";
 import "./App.css"; // Import the CSS file
 
@@ -13,18 +14,16 @@ const App = () => {
 
           {/* Navigation Menu */}
           <nav className="nav-links">
-            <a href="#product">Product</a>
-            <a href="#features">Features</a>
-            <a href="#marketplace">Marketplace</a>
-            <a href="#company">Company</a>
+            <Link to="/">Home</Link>
+            <Link to="/3d-modal">3D Modal</Link> {/* Use a real path here */}
           </nav>
 
           {/* Log in and Sign up Buttons */}
           <div className="auth-buttons">
-            <a href="#login">Log in</a>
-            <a href="#signup" className="signup-btn">
+            <Link to="/sign-in">Log in</Link> {/* Link to sign-in page */}
+            <Link to="/sign-up" className="signup-btn"> {/* Link to sign-up page */}
               Sign up
-            </a>
+            </Link>
           </div>
         </div>
       </header>
