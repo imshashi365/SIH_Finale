@@ -6,7 +6,9 @@ import App from "./App";
 import Dashboard from "./Dashboard";
 
 // Clerk Frontend API Key from .env file
-const clerkFrontendApi = import.meta.env.VITE_CLERK_API_KEY;
+const clerkFrontendApi =import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+console.log('Clerk Frontend API Key:', clerkFrontendApi);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
