@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #121212;
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links a {
+  color: #bbb;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: white;
+}
+
+.navbar .login-btn {
+  color: #bbb;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar .login-btn:hover {
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero .announcement {
+  background-color: #1f1f1f;
+  color: #bbb;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero .announcement a {
+  color: #4f9dff;
+  text-decoration: underline;
+}
+
+.hero .hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .hero-subtitle {
+  font-size: 18px;
+  color: #bbb;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero .btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.hero .primary-btn {
+  background-color: #4f9dff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.hero .primary-btn:hover {
+  background-color: #367fd8;
+}
+
+.hero .secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #555;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .secondary-btn:hover {
+  background-color: #1f1f1f;
+  border-color: #777;
+}
