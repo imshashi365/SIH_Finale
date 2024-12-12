@@ -9,7 +9,7 @@ const Signup = () => {
       <SignUp
         path="/sign-up"
         routing="path"
-        afterSignUpUrl="/dashboard" // Redirect after successful sign-up
+        afterSignUpUrl="./dashboard" // Redirect after successful sign-up
       />
     </div>
   );

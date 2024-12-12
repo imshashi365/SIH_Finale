@@ -10,8 +10,8 @@ const Login = () => {
       <SignIn
         path="/sign-in"
         routing="path"
-        afterSignInUrl="/dashboard" 
-        fallbackRedirectUrl="/dashboard" 
+        afterSignInUrl="./dashboard" 
+        fallbackRedirectUrl="./dashboard" 
       />
     </div>
   );
