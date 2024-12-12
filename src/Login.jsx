@@ -11,7 +11,7 @@ const Login = () => {
         path="/sign-in"
         routing="path"
         afterSignInUrl="/dashboard" 
-        fallbackRedirectUrl="http://localhost:3000/dashboard" 
+        fallbackRedirectUrl="/dashboard" 
       />
     </div>
   );
