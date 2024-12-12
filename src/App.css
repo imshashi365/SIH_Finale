@@ -1,19 +1,18 @@
-/* App.css */
 
-/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
 .container {
-  display: flex;
+  display: flex
+;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  height: 60px;
+  height: 70px;
+  background-color: #1e1e1e;
 }
-
 /* Navbar Styles */
 .navbar {
   background-color: white;
@@ -38,12 +37,11 @@ body {
 }
 
 .nav-links a {
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
   color: #007bff;
 }
@@ -57,7 +55,10 @@ body {
 .auth-buttons a {
   text-decoration: none;
   font-size: 1rem;
-  color: #333;
+  border-radius: 9px;
+  padding: 8px;
+  color: #ffffff;
+  background-color: darkcyan;
   transition: color 0.3s ease;
 }
 
@@ -76,4 +77,50 @@ body {
 
 .signup-btn:hover {
   background-color: #4752c4;
+}
+.login-container {
+  display: flex
+;
+  flex-direction: column;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo img {
+  width: 15%;
+}
+.signup-container {
+  display: flex
+;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+.auth-buttons a {
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 9px;
+  padding: 8px;
+  color: #000000;
+  background-color: #bbdefa;
+  transition: color 0.3s ease;
+}
+.dash {
+  display: flex
+;
+  background-color: #1a1a1a;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { SignIn } from "@clerk/clerk-react";
-import "./App.css"; // Import your CSS file
+import "./App.css"; 
 
 const Login = () => {
   return (
@@ -10,7 +10,8 @@ const Login = () => {
       <SignIn
         path="/sign-in"
         routing="path"
-        afterSignInUrl="/dashboard" // Redirect after successful sign-in
+        afterSignInUrl="/dashboard" 
+        fallbackRedirectUrl="http://localhost:3000/dashboard" 
       />
     </div>
   );

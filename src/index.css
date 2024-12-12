@@ -135,3 +135,10 @@ a {
   background-color: #1f1f1f;
   border-color: #777;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
