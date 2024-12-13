@@ -20,8 +20,8 @@ const App = () => {
 
           {/* Navigation Menu */}
           <nav className="nav-links">
-            {/* <Link to="/">Home</Link>
-            <Link to="/3d-modal">3D Modal</Link> Use a real path here */}
+            <Link to="#">Analytics</Link>
+            <Link to="#">Predictor</Link> 
           </nav>
 
           {/* Log in and Sign up Buttons */}
