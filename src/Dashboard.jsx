@@ -45,13 +45,13 @@ const Dashboard = () => {
                   className="dropdown-item2"
                   onClick={() => handleMenuItemClick("/profit")}
                 >
-                  Profit
+                  {/* Profit */}
                 </button>
                 <button
                   className="dropdown-item2"
                   onClick={() => handleMenuItemClick("/profile-settings")}
                 >
-                  Profile Settings
+                  {/* Profile Settings */}
                 </button>
                 <button
                   className="dropdown-item2"
