@@ -63,7 +63,7 @@ const Dashboard = () => {
             )}
           </div>
         </nav>
-        <div className="content">
+        <div className="contentdash">
           <h1>Welcome to the Dashboard</h1>
         </div>
       </div>

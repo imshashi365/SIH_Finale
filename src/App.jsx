@@ -20,8 +20,8 @@ const App = () => {
 
           {/* Navigation Menu */}
           <nav className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/3d-modal">3D Modal</Link> {/* Use a real path here */}
+            {/* <Link to="/">Home</Link>
+            <Link to="/3d-modal">3D Modal</Link> Use a real path here */}
           </nav>
 
           {/* Log in and Sign up Buttons */}
@@ -38,7 +38,7 @@ const App = () => {
         <header>
           <div className="herooo">
             <div className="titleheading">Reliable | Insightful | Efficient</div>
-            <h1>Empowering Postal Divisions with Data-Driven Governance</h1>
+            <h1>Leveraging Analytics & Prediction to Optimize Postal Operationse</h1>
             <p>Revolutionizing postal administration through advanced monitoring, analytics, and visualization to harness the power of digitization.</p>
             <a href="#" className="button">Get Started</a>
           </div>

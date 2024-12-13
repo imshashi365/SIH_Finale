@@ -90,7 +90,7 @@ body {
 }
 
 .logo img {
-  width: 15%;
+  width: 26%;
 }
 .signup-container {
   display: flex
@@ -203,7 +203,13 @@ p {
 
 
 
-
+.contentdash{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #292929;
+  height: 100vh;
+}
 
 
 
