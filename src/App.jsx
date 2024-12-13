@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Using Link for navigation
+import { Link } from "react-router-dom";
 import { SignIn } from "@clerk/clerk-react";
-import "./App.css"; // Import the CSS file
+import { SignUp } from "@clerk/clerk-react";
+import "./App.css";
+
 import logo from "./assets/logo.png"; // Import the logo
-import heroImage from "./assets/heroimg.jpg"; // Import the hero background image
+import heroImage from "./assets/heroimg2.jpeg"; // Import the hero background image
 
 const App = () => {
   return (
@@ -25,79 +27,43 @@ const App = () => {
           {/* Log in and Sign up Buttons */}
           <div className="auth-buttons">
             <Link to="/sign-in">Log in</Link>
-            <Link to="/sign-up" className="signup-btn">
+            {/* <Link to="/sign-up" className="signup-btn">
               Sign up
-            </Link>
+            </Link> */}
           </div>
         </div>
       </header>
 
-      {/* Hero Section with Overlay */}
-      <section
-        className="hero-section"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          marginTop: -21,
-          height: "800px",
-          
-        }}
-      >
-        {/* Black Overlay */}
-        <div
-          className="overlay"
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Black color with transparency
-            zIndex: "1", // Ensure the overlay is on top of the background image
-          }}
-        ></div>
+      <div className="heroSec">
+        <header>
+          <div className="herooo">
+            <div className="titleheading">Reliable | Insightful | Efficient</div>
+            <h1>Empowering Postal Divisions with Data-Driven Governance</h1>
+            <p>Revolutionizing postal administration through advanced monitoring, analytics, and visualization to harness the power of digitization.</p>
+            <a href="#" className="button">Get Started</a>
+          </div>
+          <div className="heroimg">
+            <div className="img2">
+              <img src={heroImage} alt="Hero Background" />
+            </div>
+          </div>
+        </header>
+      </div>
 
-        {/* Content */}
-        <div
-          className="hero-content"
-          style={{
-            position: "relative",
-            zIndex: "2", // Ensure content is above the overlay
-            textAlign: "center",
-            color: "#fff",
-          }}
-        >
-          <h1>Welcome to Our Platform</h1>
-          <p>Discover amazing features and take your experience to the next level.</p>
-          <Link
-            to="/sign-up"
-            className="hero-signup-btn"
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              borderRadius: "5px",
-              textDecoration: "none",
-            }}
-          >
-            Get Started
-          </Link>
-        </div>
-      </section>
-
+      <div className="extraspace"></div>
       {/* SignIn Component for Clerk */}
       <div style={{ textAlign: "center", marginTop: "50px" }}>
-        <h1>Welcome to the Login Page</h1>
         <SignIn
           path="/sign-in"
           routing="path"
           afterSignInUrl="/dashboard"
           redirectUrl="/dashboard"
+        />
+
+        <SignUp
+          path="/sign-up"
+          routing="path"
+          afterSignUpUrl="/dashboard"
         />
       </div>
     </div>

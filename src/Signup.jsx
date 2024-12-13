@@ -1,6 +1,7 @@
 import React from "react";
 import { SignUp } from "@clerk/clerk-react";
 import "./App.css"; // Import your CSS file
+
 const Signup = () => {
   return (
     <div className="signup-container">
@@ -9,7 +10,7 @@ const Signup = () => {
       <SignUp
         path="/sign-up"
         routing="path"
-        afterSignUpUrl="./dashboard" // Redirect after successful sign-up
+        afterSignUpUrl="/dashboard" // Corrected to absolute path
       />
     </div>
   );
