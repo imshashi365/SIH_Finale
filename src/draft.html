@@ -7,116 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./draft.css">
     <title>Document</title>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "./build/three.webgpu.js",
-                "three/webgpu": "./build/three.webgpu.js",
-                "three/tsl": "./build/three.tsl.js",
-                "three/addons/": "./addons/"
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <header>
-        <div class="herooo">
-            <h1>Padhlo DSA kahin se, practice hogi yahi se.</h1>
-            <p>Suffer from 8,000+ company-wise LeetCode questions like a true CodeJeet. Kyunki naukri ke liye sab kuch
-                chalega!</p>
-            <a href="#" class="button">Get Started</a>
-        </div>
-        <div class="heroimg">
-            <!-- You can add an image or other visual here -->
-        </div>
-    </header>
+   
+    
 
-    <!-- 3D Earth Container -->
-    <section id="earth-section">
-        <div id="earth-container"></div>
-    </section>
-
-    <script type="module">
-        import * as THREE from 'three';
-        import { step, normalWorld, output, texture, vec3, vec4, normalize, positionWorld, bumpMap, cameraPosition, color, uniform, mix, uv, max } from 'three/tsl';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-        let camera, scene, renderer, controls, globe, clock;
-
-        init();
-
-        function init() {
-            clock = new THREE.Clock();
-
-            camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 100);
-            camera.position.set(4.5, 2, 3);
-
-            scene = new THREE.Scene();
-
-            // Sun
-            const sun = new THREE.DirectionalLight('#ffffff', 2);
-            sun.position.set(0, 0, 3);
-            scene.add(sun);
-
-            // Uniforms
-            const atmosphereDayColor = uniform(color('#4db2ff'));
-            const atmosphereTwilightColor = uniform(color('#bc490b'));
-            const roughnessLow = uniform(0.25);
-            const roughnessHigh = uniform(0.35);
-
-            // Textures
-            const textureLoader = new THREE.TextureLoader();
-            const dayTexture = textureLoader.load('./textures/planets/earth_day_4096.jpg');
-            dayTexture.colorSpace = THREE.SRGBColorSpace;
-            const nightTexture = textureLoader.load('./textures/planets/earth_night_4096.jpg');
-            nightTexture.colorSpace = THREE.SRGBColorSpace;
-            const bumpRoughnessCloudsTexture = textureLoader.load('./textures/planets/earth_bump_roughness_clouds_4096.jpg');
-
-            // Fresnel Effect
-            const viewDirection = positionWorld.sub(cameraPosition).normalize();
-            const fresnel = viewDirection.dot(normalWorld).abs().oneMinus().toVar();
-            const sunOrientation = normalWorld.dot(normalize(sun.position)).toVar();
-
-            // Atmosphere Color
-            const atmosphereColor = mix(atmosphereTwilightColor, atmosphereDayColor, sunOrientation.smoothstep(-0.25, 0.75));
-
-            // Globe
-            const globeMaterial = new THREE.MeshStandardNodeMaterial();
-            const cloudsStrength = texture(bumpRoughnessCloudsTexture, uv()).b.smoothstep(0.2, 1);
-            globeMaterial.colorNode = mix(texture(dayTexture), vec3(1), cloudsStrength.mul(2));
-            const sphereGeometry = new THREE.SphereGeometry(1, 64, 64);
-            globe = new THREE.Mesh(sphereGeometry, globeMaterial);
-            scene.add(globe);
-
-            // Renderer
-            renderer = new THREE.WebGPURenderer();
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, 400); // Limit height for better integration with the page
-            document.getElementById('earth-container').appendChild(renderer.domElement);
-
-            // Controls
-            controls = new OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-
-            // Resize Event
-            window.addEventListener('resize', onWindowResize);
-            renderer.setAnimationLoop(animate);
-        }
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, 400);
-        }
-
-        function animate() {
-            const delta = clock.getDelta();
-            globe.rotation.y += delta * 0.025;
-            controls.update();
-            renderer.render(scene, camera);
-        }
-    </script>
 </body>
 
 </html>

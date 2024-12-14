@@ -7,6 +7,7 @@ import "./App.css";
 import logo from "./assets/logo.png"; // Import the logo
 import heroImage from "./assets/heroimg2.jpeg"; // Import the hero background image
 
+
 const App = () => {
   return (
     <div className="homepage">
@@ -21,7 +22,7 @@ const App = () => {
           {/* Navigation Menu */}
           <nav className="nav-links">
             <Link to="#">Analytics</Link>
-            <Link to="#">Predictor</Link> 
+            <Link to="/predictor">Predictor</Link> 
           </nav>
 
           {/* Log in and Sign up Buttons */}

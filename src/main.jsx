@@ -6,10 +6,10 @@ import App from "./App";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import Signup from "./Signup"; 
+import Predictor from "./Predictor"; // Import the Predictor component
 
 const clerkFrontendApi = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 console.log("Clerk Frontend API Key:", clerkFrontendApi);
-
 
 const RedirectIfSignedIn = ({ children }) => {
   const { isSignedIn } = useAuth();
@@ -57,6 +57,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   <Signup />
                 </SignedOut>
               </RedirectIfSignedIn>
+            }
+          />
+
+          {/* Route for Predictor (requires signed-in user) */}
+          <Route
+            path="/predictor"
+            element={
+              <SignedIn>
+                <Predictor />
+              </SignedIn>
             }
           />
 
