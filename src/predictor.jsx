@@ -1,48 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
 const Predictor = () => {
-  <nav className="navbar2">
-          <h1 className="navbar-brand2">Dashboard</h1>
-          <div className="profile-menu2">
-            <button className="predictorrr"><Link to="/predictor" className="predictlink">Predictor</Link> </button>
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-            <button className="profile-icon-button" onClick={handleDropdownToggle}>
-              <FontAwesomeIcon icon={faUserCircle} className="profile-icon" />
-            </button>
+  // Toggle the dropdown
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
-            {isDropdownOpen && (
-              <div className="dropdown-menu2">
-                <button
-                  className="dropdown-item2"
-                  onClick={() => handleMenuItemClick("/profit")}
-                >
-                  {/* Profit */}
-                </button>
-                <button
-                  className="dropdown-item2"
-                  onClick={() => handleMenuItemClick("/profile-settings")}
-                >
-                  {/* Profile Settings */}
-                </button>
-                <button
-                  className="dropdown-item2"
-                  onClick={() => handleMenuItemClick("logout")}
-                >
-                  Logout
-                </button>
-              </div>
-            )}
-          </div>
-        </nav>
+  // Handle menu item click (for navigation or actions like logout)
+  const handleMenuItemClick = (path) => {
+    if (path === "logout") {
+      // Handle logout logic here
+      console.log("Logging out...");
+    } else {
+      // Navigate to the given path
+      window.location.href = path; // Or use React Router's navigate method if needed
+    }
+  };
+
   return (
     <div className="predictor-container">
-      <h1>Welcome to Drishti Predictor</h1>
-      <p>This is the Predictor page where you can interact with your Streamlit chatbot.</p>
+      <nav className="navbar2">
+        <h1 className="navbar-brand2"> <Link to="/" className="predictlink">Dashboard</Link></h1>
+        <div className="profile-menu2">
+          <button className="predictorrr">
+            <Link to="/dashboard" className="predictlink">Analytics</Link>
+          </button>
+
+          <button className="profile-icon-button" onClick={handleDropdownToggle}>
+            <FontAwesomeIcon icon={faUserCircle} className="profile-icon" />
+          </button>
+
+          {isDropdownOpen && (
+            <div className="dropdown-menu2">
+              <button
+                className="dropdown-item2"
+                onClick={() => handleMenuItemClick("/profit")}
+              >
+                {/* Profit */}
+              </button>
+              <button
+                className="dropdown-item2"
+                onClick={() => handleMenuItemClick("/profile-settings")}
+              >
+                {/* Profile Settings */}
+              </button>
+              <button
+                className="dropdown-item2"
+                onClick={() => handleMenuItemClick("logout")}
+              >
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
+      </nav>
       <iframe
-        src="http://localhost:8506/" // Replace with your Streamlit app's URL
+        src="http://localhost:8503/" // Replace with your Streamlit app's URL
         title="Drishti Chatbot"
         width="100%"
         height="800px"

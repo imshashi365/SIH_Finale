@@ -21,8 +21,8 @@ const App = () => {
 
           {/* Navigation Menu */}
           <nav className="nav-links">
-            <Link to="#">Analytics</Link>
-            <Link to="/predictor">Predictor</Link> 
+            {/* <Link to="#">Analytics</Link>
+            <Link to="/predictor">Predictor</Link>  */}
           </nav>
 
           {/* Log in and Sign up Buttons */}
